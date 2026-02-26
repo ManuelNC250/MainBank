@@ -8,35 +8,35 @@
         </header>
 
         <main class="panel">
-          <section class="cards-scroll">
-            <article class="bank-card">
-              <div class="bank-card-deep"></div>
-              <div class="bank-card-info">
-                <p class="date">06/29</p>
-                <p class="number">4892 2025 5783 0457</p>
-                <p class="cvv">789</p>
-                <div class="row">
-                  <strong>2.567,69EUR</strong>
-                  <span>VISA</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="bank-card second">
-              <div class="bank-card-deep"></div>
-              <div class="bank-card-info">
-                <p class="date">07/29</p>
-                <p class="number">5098 2024 4987 0459</p>
-                <p class="cvv">764</p>
-                <div class="row">
-                  <strong>0,80EUR</strong>
-                  <span>VISA</span>
-                </div>
-              </div>
-            </article>
-          </section>
-
           <div class="content-scroll">
+            <section class="cards-scroll">
+              <article class="bank-card">
+                <div class="bank-card-deep"></div>
+                <div class="bank-card-info">
+                  <p class="date">06/29</p>
+                  <p class="number">4892 2025 5783 0457</p>
+                  <p class="cvv">789</p>
+                  <div class="row">
+                    <strong>2.567,69EUR</strong>
+                    <span>VISA</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="bank-card second">
+                <div class="bank-card-deep"></div>
+                <div class="bank-card-info">
+                  <p class="date">07/29</p>
+                  <p class="number">5098 2024 4987 0459</p>
+                  <p class="cvv">764</p>
+                  <div class="row">
+                    <strong>0,80EUR</strong>
+                    <span>VISA</span>
+                  </div>
+                </div>
+              </article>
+            </section>
+
             <section class="balance">
               <p>Balance</p>
               <h2>1000EUR</h2>

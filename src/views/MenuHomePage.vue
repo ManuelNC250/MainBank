@@ -127,31 +127,9 @@ export default defineComponent({
   text-decoration: none;
   background: #41c49b;
   border-radius: 14px;
-  height: 188px;
+  height: 190px;
   position: relative;
   overflow: hidden;
-}
-
-.account::before,
-.account::after {
-  content: "";
-  position: absolute;
-  left: 10px;
-  right: 20px;
-  height: 16px;
-  border-radius: 0 0 12px 12px;
-}
-
-.account::before {
-  bottom: -10px;
-  background: rgba(11, 122, 58, 0.78);
-}
-
-.account::after {
-  bottom: -18px;
-  left: 24px;
-  right: 34px;
-  background: rgba(11, 122, 58, 0.45);
 }
 
 .account-deep {
@@ -175,7 +153,7 @@ export default defineComponent({
 }
 
 .account-info h2 {
-  font-size: 38px;
+  font-size: 34px;
   font-weight: 500;
 }
 
@@ -192,11 +170,11 @@ export default defineComponent({
 }
 
 .row strong {
-  font-size: 38px;
+  font-size: 18px;
 }
 
 .row span {
-  font-size: 40px;
+  font-size: 34px;
   font-weight: 700;
 }
 
@@ -321,11 +299,7 @@ export default defineComponent({
   }
 
   .row strong {
-    font-size: 34px;
-  }
-
-  .row span {
-    font-size: 34px;
+    font-size: 18px;
   }
 }
 </style>

@@ -35,7 +35,9 @@
 
               <article class="stock-card">
                 <div class="stock-top">
-                  <div class="logo apple">A</div>
+                  <div class="logo apple">
+                    <img src="/images/apple.png" alt="Apple" />
+                  </div>
                   <div>
                     <h3>AAPL</h3>
                     <p>Apple Inc.</p>
@@ -57,12 +59,14 @@
 
             <div class="list-scroll">
               <div class="item">
-                <div class="brand msft"></div>
+                <div class="brand msft">
+                  <img src="/images/microsoft.png" alt="Microsoft" />
+                </div>
                 <div class="name">
                   <strong>MSFT</strong>
                   <p>Microsoft Corp.</p>
                 </div>
-                <div class="spark red"></div>
+                <VChart class="spark-chart" :option="msftOption" autoresize />
                 <div class="price">
                   <strong>213.10EUR</strong>
                   <span class="down">2.5%</span>
@@ -75,7 +79,7 @@
                   <strong>GOOGLE</strong>
                   <p>Alphabet Inc.</p>
                 </div>
-                <div class="spark green"></div>
+                <VChart class="spark-chart" :option="googleOption" autoresize />
                 <div class="price">
                   <strong>213.10EUR</strong>
                   <span class="up">1.1%</span>
@@ -83,12 +87,14 @@
               </div>
 
               <router-link to="/statistics" class="item spot-link">
-                <div class="brand spot"></div>
+                <div class="brand spot">
+                  <span>S</span>
+                </div>
                 <div class="name">
                   <strong>SPOT</strong>
                   <p>Microsoft Corp.</p>
                 </div>
-                <div class="spark red"></div>
+                <VChart class="spark-chart" :option="spotOption" autoresize />
                 <div class="price">
                   <strong>213.10EUR</strong>
                   <span class="down">2.5%</span>
@@ -164,7 +170,49 @@ export default defineComponent({
       ],
     };
 
-    return { query, fbOption, aaplOption };
+    const msftOption = {
+      ...baseMini,
+      series: [
+        {
+          type: "line",
+          smooth: true,
+          data: [20, 19, 18, 17, 16, 15, 14, 13],
+          showSymbol: false,
+          lineStyle: { color: "#ff7f97", width: 2 },
+          areaStyle: { color: "rgba(255,127,151,0.25)" },
+        },
+      ],
+    };
+
+    const googleOption = {
+      ...baseMini,
+      series: [
+        {
+          type: "line",
+          smooth: true,
+          data: [12, 13, 12, 14, 15, 16, 15, 17],
+          showSymbol: false,
+          lineStyle: { color: "#66ba86", width: 2 },
+          areaStyle: { color: "rgba(102,186,134,0.25)" },
+        },
+      ],
+    };
+
+    const spotOption = {
+      ...baseMini,
+      series: [
+        {
+          type: "line",
+          smooth: true,
+          data: [18, 17, 16, 15, 16, 15, 14, 13],
+          showSymbol: false,
+          lineStyle: { color: "#ff7f97", width: 2 },
+          areaStyle: { color: "rgba(255,127,151,0.25)" },
+        },
+      ],
+    };
+
+    return { query, fbOption, aaplOption, msftOption, googleOption, spotOption };
   },
 });
 </script>
@@ -295,6 +343,13 @@ h2 {
 
 .logo.apple {
   background: #2e2e2e;
+  overflow: hidden;
+}
+
+.logo.apple img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
 }
 
 .stock-top h3,
@@ -390,7 +445,15 @@ h2 {
 }
 
 .brand.msft {
-  background: linear-gradient(90deg, #f25022 50%, #7fba00 50%);
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #ececec;
+}
+
+.brand.msft img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .brand.google {
@@ -405,6 +468,14 @@ h2 {
 
 .brand.spot {
   background: #29c462;
+  display: grid;
+  place-items: center;
+}
+
+.brand.spot span {
+  color: #fff;
+  font-weight: 700;
+  font-size: 24px;
 }
 
 .name strong {
@@ -418,17 +489,10 @@ h2 {
   font-size: 14px;
 }
 
-.spark {
+.spark-chart {
   height: 34px;
+  width: 92px;
   border-radius: 6px;
-}
-
-.spark.red {
-  background: linear-gradient(to right, rgba(255, 120, 145, 0.3), rgba(255, 120, 145, 0.05));
-}
-
-.spark.green {
-  background: linear-gradient(to right, rgba(102, 186, 134, 0.3), rgba(102, 186, 134, 0.05));
 }
 
 .price {
